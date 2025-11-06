@@ -5,7 +5,7 @@ export default function About() {
       <div className="relative w-full h-[400px] overflow-hidden rounded-2xl mx-auto max-w-6xl shadow-lg">
         <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1920&q=80" alt="Gedung Sekolah" className="object-cover w-full h-full opacity-80 hover:scale-105 transition-transform duration-700" />
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-cyan-400 drop-shadow-lg">Sekolah</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-cyan-400 drop-shadow-lg">SMAN 1 Konoha</h1>
           <p className="mt-3 text-lg md:text-xl text-gray-200 max-w-2xl text-center">Membangun Generasi Cerdas, Kreatif, dan Berkarakter Unggul</p>
         </div>
       </div>
