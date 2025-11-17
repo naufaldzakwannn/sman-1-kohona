@@ -2,21 +2,30 @@ import { useState } from "react";
 import { Eye, EyeOff, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { loginAdmin } from "../services/authServices";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMsg("");
+
     try {
       const user = await loginAdmin(formData.email, formData.password);
       console.log("Login berhasil:", user);
-      // redirect ke dashboard
+
+      navigate("/"); // redirect
     } catch (err) {
       console.error("Login gagal:", err.response?.data || err.message);
+      alert("Login gagal, periksa email atau password.");
     }
   };
 
@@ -65,8 +74,8 @@ export default function Login() {
             </div>
           </div>
 
-          <button type="submit" className="w-full py-2.5 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-semibold transition duration-200">
-            Masuk
+          <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition">
+            {loading ? "Loading..." : "Masuk"}
           </button>
         </form>
       </motion.div>

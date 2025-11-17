@@ -1,8 +1,7 @@
-// src/services/api.js
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api", // ubah sesuai base URL API Laravel
+  baseURL: "/api", // gunakan proxy Vite
 });
 
 api.interceptors.request.use((config) => {
