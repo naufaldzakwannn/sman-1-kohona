@@ -72,7 +72,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto mt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
         <p>© {new Date().getFullYear()} SMAN 1 Konoha. All rights reserved.</p>
         <p className="mt-3 md:mt-0">
-          Designed with ❤️ by <span className="text-cyan-400 font-medium">Tim IT SMAN 1 Konoha</span>
+          Designed by <span className="text-cyan-400 font-medium">Tim IT SMAN 1 Konoha</span>
         </p>
       </div>
     </footer>
